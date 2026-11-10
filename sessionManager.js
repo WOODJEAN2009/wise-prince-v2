@@ -1,6 +1,5 @@
 import makeWASocket, {
-  useMultiFileAuthState,
-  DisconnectReason
+  useMultiFileAuthState
 } from "@whiskeysockets/baileys";
 
 import QRCode from "qrcode";
@@ -47,8 +46,11 @@ export async function createSession(phoneNumber = null) {
       session.qr = await QRCode.toDataURL(qr);
     }
 
-    if (connection === "connecting" && phoneNumber &&
-        !session.pairingCode) {
+    if (
+      connection === "connecting" &&
+      phoneNumber &&
+      !session.pairingCode
+    ) {
       try {
         const number = phoneNumber.replace(/\D/g, "");
         session.pairingCode =
