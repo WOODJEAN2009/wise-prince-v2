@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-  res.send("WISE PRINCE ✝️ — Serveur OK");
+  app.get("/", (req, res) => {
+  res.sendFile(process.cwd() + "/public/index.html");
 });
 
 app.post("/api/session", async (req, res) => {
