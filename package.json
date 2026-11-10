@@ -1,0 +1,13 @@
+{
+  "name": "wise-prince-v2",
+  "version": "1.0.0",
+  "description": "WISE PRINCE WhatsApp Bot",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
