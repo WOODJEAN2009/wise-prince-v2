@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  app.get("/", (req, res) => {
   res.sendFile(process.cwd() + "/public/index.html");
 });
 
@@ -24,7 +24,10 @@ app.post("/api/session", async (req, res) => {
       sessionId: session.id,
       status: session.status
     });
+
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       error: "Session creation failed"
